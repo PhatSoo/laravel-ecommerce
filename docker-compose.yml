@@ -1,0 +1,11 @@
+services:
+    laravel-db:
+        image: mysql:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=my-secret-pw
+            - MYSQL_DATABASE=${DB_DATABASE}
+        restart: always
+        ports:
+            - 3307:3306
+        volumes:
+            - ./database/mysql/:/var/lib/mysql
